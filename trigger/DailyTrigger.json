@@ -1,5 +1,5 @@
 {
-	"name": "trigger1",
+	"name": "DailyTrigger",
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
@@ -15,8 +15,8 @@
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Hour",
-				"interval": 4,
-				"startTime": "2024-12-09T06:00:00",
+				"interval": 24,
+				"startTime": "2024-12-09T09:00:00",
 				"timeZone": "India Standard Time"
 			}
 		}
