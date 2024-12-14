@@ -26,6 +26,9 @@
 		"PostgresPasswordLS_properties_typeProperties_baseUrl": {
 			"value": "https://ProjectKVault.vault.azure.net/"
 		},
+		"EventTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/af9870b9-f599-421b-a7ab-eb1ca6072c1a/resourceGroups/Project-ADE-18/providers/Microsoft.Storage/storageAccounts/project18adls"
+		},
 		"containerUri": {
 			"value": ""
 		},
