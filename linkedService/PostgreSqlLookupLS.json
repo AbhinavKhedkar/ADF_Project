@@ -1,0 +1,28 @@
+{
+	"name": "PostgreSqlLookupLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "PostgreSqlV2",
+		"typeProperties": {
+			"server": "localhost",
+			"port": 5432,
+			"database": "Project-ADE-18-DB",
+			"username": "postgres",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "PostgresPasswordLS",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "postgres-password"
+			},
+			"sslMode": 2,
+			"authenticationType": "Basic"
+		},
+		"connectVia": {
+			"referenceName": "SelfHoistedIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

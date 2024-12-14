@@ -1,0 +1,9 @@
+{
+	"name": "projrct-df",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f844f4dd-2270-4fa3-b641-5f0c1cc26af3",
+		"tenantId": "3c5ebc3f-9248-46bf-bffb-76f43534f653"
+	}
+}
