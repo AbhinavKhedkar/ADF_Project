@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "projrct-df"
+		},
+		"AzureDataLakeStorageCopyLS_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorageCopyLS_properties_typeProperties_url": {
+			"value": "https://project18adls.dfs.core.windows.net/"
+		},
+		"AzureDatabricksLS_properties_typeProperties_existingClusterId": {
+			"value": "1206-073320-rjjtof1f"
+		},
+		"PostgreSqlLookupLS_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"PostgreSqlLookupLS_properties_typeProperties_database": {
+			"value": "Project-ADE-18-DB"
+		},
+		"PostgreSqlLookupLS_properties_typeProperties_username": {
+			"value": "postgres"
+		},
+		"PostgresPasswordLS_properties_typeProperties_baseUrl": {
+			"value": "https://ProjectKVault.vault.azure.net/"
+		}
+	}
+}

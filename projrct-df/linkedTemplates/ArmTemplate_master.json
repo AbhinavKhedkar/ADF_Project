@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "projrct-df"
+		},
+		"AzureDataLakeStorageCopyLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageCopyLS'"
+		},
+		"AzureDataLakeStorageCopyLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://project18adls.dfs.core.windows.net/"
+		},
+		"AzureDatabricksLS_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1206-073320-rjjtof1f"
+		},
+		"PostgreSqlLookupLS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"PostgreSqlLookupLS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Project-ADE-18-DB"
+		},
+		"PostgreSqlLookupLS_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "postgres"
+		},
+		"PostgresPasswordLS_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ProjectKVault.vault.azure.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "projrct-df_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorageCopyLS_accountKey": {
+						"value": "[parameters('AzureDataLakeStorageCopyLS_accountKey')]"
+					},
+					"AzureDataLakeStorageCopyLS_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageCopyLS_properties_typeProperties_url')]"
+					},
+					"PostgresPasswordLS_properties_typeProperties_baseUrl": {
+						"value": "[parameters('PostgresPasswordLS_properties_typeProperties_baseUrl')]"
+					},
+					"AzureDatabricksLS_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricksLS_properties_typeProperties_existingClusterId')]"
+					},
+					"PostgreSqlLookupLS_properties_typeProperties_server": {
+						"value": "[parameters('PostgreSqlLookupLS_properties_typeProperties_server')]"
+					},
+					"PostgreSqlLookupLS_properties_typeProperties_database": {
+						"value": "[parameters('PostgreSqlLookupLS_properties_typeProperties_database')]"
+					},
+					"PostgreSqlLookupLS_properties_typeProperties_username": {
+						"value": "[parameters('PostgreSqlLookupLS_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
