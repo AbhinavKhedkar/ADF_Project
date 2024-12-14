@@ -1,0 +1,24 @@
+{
+	"name": "EventTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "project-pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/bronze/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/af9870b9-f599-421b-a7ab-eb1ca6072c1a/resourceGroups/Project-ADE-18/providers/Microsoft.Storage/storageAccounts/project18adls",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
